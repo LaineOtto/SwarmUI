@@ -41,6 +41,6 @@ services:
 #   swarmmodels:
 #     name: swarmmodels
 #   swarmoutput:
-    name: swarmoutput
-  swarmcustomworkflows:
-    name: swarmcustomworkflows
+#     name: swarmoutput
+#   swarmcustomworkflows:
+#     name: swarmcustomworkflows
