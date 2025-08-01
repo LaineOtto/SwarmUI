@@ -29,18 +29,18 @@ services:
           devices:
             - driver: nvidia
               capabilities: [compute, utility]
-volumes:
-  swarmdata:
-    name: swarmdata
-  swarmbackend:
-    name: swarmbackend
-  swarmdlnodes:
-    name: swarmdlnodes
-  swarmextensions:
-    name: swarmextensions
-  swarmmodels:
-    name: swarmmodels
-  swarmoutput:
+# volumes:
+#   swarmdata:
+#     name: swarmdata
+#   swarmbackend:
+#     name: swarmbackend
+#   swarmdlnodes:
+#     name: swarmdlnodes
+#   swarmextensions:
+#     name: swarmextensions
+#   swarmmodels:
+#     name: swarmmodels
+#   swarmoutput:
     name: swarmoutput
   swarmcustomworkflows:
     name: swarmcustomworkflows
