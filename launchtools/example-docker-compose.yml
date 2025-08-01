@@ -14,14 +14,14 @@ services:
     container_name: swarmui
     # uncomment `network_mode: host` if you want to access other services on the host network (eg a separated comfy instance)
     # network_mode: host
-    volumes:
-      - swarmdata:/SwarmUI/Data
-      - swarmbackend:/SwarmUI/dlbackend
-      - swarmdlnodes:/SwarmUI/src/BuiltinExtensions/ComfyUIBackend/DLNodes
-      - swarmextensions:/SwarmUI/src/Extensions
-      - swarmmodels:/SwarmUI/Models
-      - swarmoutput:/SwarmUI/Output
-      - swarmcustomworkflows:/SwarmUI/src/BuiltinExtensions/ComfyUIBackend/CustomWorkflows
+    # volumes:
+    #   - swarmdata:/SwarmUI/Data
+    #   - swarmbackend:/SwarmUI/dlbackend
+    #   - swarmdlnodes:/SwarmUI/src/BuiltinExtensions/ComfyUIBackend/DLNodes
+    #   - swarmextensions:/SwarmUI/src/Extensions
+    #   - swarmmodels:/SwarmUI/Models
+    #   - swarmoutput:/SwarmUI/Output
+    #   - swarmcustomworkflows:/SwarmUI/src/BuiltinExtensions/ComfyUIBackend/CustomWorkflows
     ports:
       - "7801:7801"
     runtime: nvidia
@@ -31,18 +31,18 @@ services:
           devices:
             - driver: nvidia
               capabilities: [compute, utility]
-volumes:
-  swarmdata:
-    name: swarmdata
-  swarmbackend:
-    name: swarmbackend
-  swarmdlnodes:
-    name: swarmdlnodes
-  swarmextensions:
-    name: swarmextensions
-  swarmmodels:
-    name: swarmmodels
-  swarmoutput:
-    name: swarmoutput
-  swarmcustomworkflows:
-    name: swarmcustomworkflows
+# volumes:
+#   swarmdata:
+#     name: swarmdata
+#   swarmbackend:
+#     name: swarmbackend
+#   swarmdlnodes:
+#     name: swarmdlnodes
+#   swarmextensions:
+#     name: swarmextensions
+#   swarmmodels:
+#     name: swarmmodels
+#   swarmoutput:
+#     name: swarmoutput
+#   swarmcustomworkflows:
+#     name: swarmcustomworkflows
