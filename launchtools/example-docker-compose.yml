@@ -7,10 +7,10 @@ services:
     stdin_open: true   # keep STDIN open
     tty: true          # allocate a TTY
     build:
-      context: .
+      context: ..
       args:
         UID: ${HOST_UID:-1000}
-      dockerfile: ./StandardDockerfile.docker
+      dockerfile: launchtools/StandardDockerfile.docker
     container_name: swarmui
     # uncomment `network_mode: host` if you want to access other services on the host network (eg a separated comfy instance)
     # network_mode: host
