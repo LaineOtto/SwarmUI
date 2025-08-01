@@ -17,19 +17,18 @@ services:
       - swarmbackend:/SwarmUI/dlbackend
       - swarmdlnodes:/SwarmUI/src/BuiltinExtensions/ComfyUIBackend/DLNodes
       - swarmextensions:/SwarmUI/src/Extensions
-      - ./Models:/SwarmUI/Models
-      - ./Output:/SwarmUI/Output
-      - ./src/BuiltinExtensions/ComfyUIBackend/CustomWorkflows:/SwarmUI/src/BuiltinExtensions/ComfyUIBackend/CustomWorkflows
+      - swarmmodels:/SwarmUI/Models
+      - swarmoutput:/SwarmUI/Output
+      - swarmcustomworkflows:/SwarmUI/src/BuiltinExtensions/ComfyUIBackend/CustomWorkflows
     ports:
       - "7801:7801"
+    runtime: nvidia
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
-              # change the count to the number of GPUs you want to use.
-              count: 1
-              capabilities: [gpu]
+              capabilities: [compute, utility]
 volumes:
   swarmdata:
     name: swarmdata
@@ -39,3 +38,9 @@ volumes:
     name: swarmdlnodes
   swarmextensions:
     name: swarmextensions
+  swarmmodels:
+    name: swarmmodels
+  swarmoutput:
+    name: swarmoutput
+  swarmcustomworkflows:
+    name: swarmcustomworkflows
