@@ -12,7 +12,7 @@ RUN apt install -y libglib2.0-0 libgl1
 # Copy swarm's files into the docker container
 COPY . /SwarmUI
 
-RUN chown -R $UID:$UID ./SwarmUI
+RUN chown -R $UID:$UID /SwarmUI
 
 # Stupidproofing on git calls from inside docker
 RUN git config --global --add safe.directory '*'
